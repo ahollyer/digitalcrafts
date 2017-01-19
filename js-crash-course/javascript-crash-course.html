@@ -1,0 +1,183 @@
+<script>
+
+document.write('Hello') //Not preferred. Erases anything written above it.
+
+console.log('Hello')
+
+/*The code below asks a user for his/her name. Uncomment to see.*/
+//var name = prompt('What is your name?')
+//console.log('name')
+
+//string
+var name = "Aspen"
+name = "Edi"
+
+
+//booleans
+var theTruth = true
+var theLie = false
+
+if (theLie) {
+  console.log('It is true') //Won't log because false
+}
+
+//numbers
+var age = 28
+
+console.log(age / 5)
+
+//arrays
+var arr1 = []; //empty array
+var arr2 = new Array(4); //array with 4 empty spaces
+
+arr2[0] = 'Christmas'
+arr2.push('Nice'); //add to end of array
+console.log(arr);
+
+var array2 = ['Naughty'];
+
+console.log(array2);
+
+array2.push(2);
+
+console.log(array2.pop()); //remove from end of array
+
+//object
+var person = {
+  name: 'Aspen',
+  age: 28,
+  sayHello: function() {
+    console.log('Hello, ' + this.name);
+  }, //can leave dangling comma at the end of list
+};
+
+person.sayHello();
+
+//functions
+function sayHello(name) {
+  console.log('Hello ' + name);
+}
+
+sayHello('Simon');
+
+var sayGoodbye = function(name) {
+  console.log('Goodbye, ' + name)
+}
+
+sayGoodbye('Simon');
+
+function double(num) {
+  return num + num;
+}
+
+console.log(double(2));
+console.log(double(4));
+console.log(double(double(2))); //function within a function
+
+// Math
+console.log(Math.pow(2, 2)); //base, exponent
+console.log(Math.sqrt(5)); //square root
+console.log(Math.floor(4.7)); //round down
+console.log(Math.ceil(4.4)); //round up
+console.log(Math.round(4.7)); // round regular
+console.log(Math.random()); //rand 0-1
+console.log(Math.ceil(Math.random() * 9) + 1); //rand 1-10
+
+// Operators
+var month = 1;
+
+console.log(month + 2);
+
+var monthString = '2';
+
+console.log(monthString + 2); //turns two into a string
+
+/*Performs multiplication, then converts product
+into a string and concatenates to monthString*/
+console.log(monthString + 2 * 12);
+
+console.log(3 * monthString); //monthString converted to integer
+/* ONLY converts to string in case of +, all other operators to integer */
+
+var ten = 'ten';
+
+console.log(30 / ten); // returns NaN - not a number
+
+console.log(isNaN(ten)) //true
+
+var mod = 10 % 3;
+console.log(mod); //return remainder after dividing 10 by 3
+
+console.log(month++); //2
+console.log(++month); //3
+
+// conditionals
+
+//The code below asks for user input. Uncomment to see.
+
+/*var answer = prompt('Pick a number');
+if (!answer) {
+  console.log('You did not enter anything!');
+} else if (isNaN(answer)) {
+  console.log('Not a number')
+} else {
+  console.log('You entered: ' + answer);
+}*/
+
+var ages = [1, 2, 3, 4, 5, 6];
+
+for (var i = 0; i < ages.length; i++) {
+  if(ages[i] % 2 === 0) {
+    console.log('Oh, the even years');
+  } else {
+    console.log('I hate the odd years')
+  }
+}
+// falsy = 0, null, undefined, ""
+// === type-checks, for == '' would equal 0
+// best practice is to always use 3 equals!!
+
+var test = null;
+
+console.log(test);
+
+console.log('test' in window); //window is an object to check global scope
+console.log(window['test']); //same as above
+
+// DOM, this is stuff you would just use jQuery for
+var h1 = document.createElement('h1');
+h1.innerHTML = "Hi there!";
+document.body.appendChild(h1);
+
+//Histogram
+function histogram(str) {
+  var length = str.length;
+  var counterObj = {};
+
+  for (var i = 0; i < length; i++) {
+    var letter = str[i];
+
+    if (!counterObj[letter]) {
+      counterObj[letter] = 0;
+    }
+
+    counterObj[letter] += 1;
+  }
+  return counterObj;
+}
+
+console.log(histogram('aaagggderegfgds'));
+
+
+// ------NOTES ------
+//Don't use shift on big arrays because they have to be re-indexed
+//check out source code for Bootstrap or jQuery
+//What are backticks for?
+//Why no semicolons? --> can be inserted automatically after coding
+//scope
+//9e2 = 900
+//splice()? array method --> puts something in the middle of the
+    //array and pushes back everything after it
+//don't work in global scope, too easy to break things
+
+</script>
